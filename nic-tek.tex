@@ -1,0 +1,345 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.6.4, 13 Nov 2021) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=0.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+% \definecolor{SlateGrey}{HTML}{2E2E2E}
+% \definecolor{LightGrey}{HTML}{666666}
+% \definecolor{DarkPastelRed}{HTML}{450808}
+% \definecolor{PastelRed}{HTML}{8F0D0D}
+% \definecolor{GoldenEarth}{HTML}{E7D192}
+% \colorlet{name}{black}
+% \colorlet{tagline}{PastelRed}
+% \colorlet{heading}{DarkPastelRed}
+% \colorlet{headingrule}{GoldenEarth}
+% \colorlet{subheading}{PastelRed}
+% \colorlet{accent}{PastelRed}
+% \colorlet{emphasis}{SlateGrey}
+% \colorlet{body}{LightGrey}
+
+\definecolor{VividPurple}{HTML}{008080}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{VividPurple}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+\input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+% \input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Nicholas Payne}
+\tagline{Data Engineering/Science & Software Engineering}
+%% You can add multiple photos on the left or right
+% \photoR{3.5cm}{bitmoji}
+\photoR{3.5cm}{me}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{nic.payne@protonmail.com}
+  \phone{319-389-5740}
+  \location{Appleton, WI}
+  \twitter{@pypeaday}
+  \linkedin{nicpayne713}
+  \github{nicpayne713}
+  \printinfo{\faTwitch}{pypeaday}[https://twitch.tv/pypeaday]
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Caterpillar, Inc.}
+
+\cvevent{Software Engineer}{Group: Remanufacturing}{February 2021-Present}{Remote}
+
+
+\begin{itemize}
+
+\item Build ETL pipeline solutions with Python and Kedro targeting Docker deployment on AWS Batch with Snowflake and S3 data stores
+\item Manage AWS infrastructure including S3, Batch, ECS, Sagemaker, CloudWatch, and EventBridge 
+\item Coach data scientists on my team in clean coding, best practices such as git, advancted python coding for data engineering, and Kedro pipeline deployment 
+\item Manage Azure Build Pipelines and help enable/mature our CI/CD strategy
+\item Build Streamlit apps for visualizing and exploring data with customers to guide our Kedro pipeline development 
+
+\end{itemize}
+
+\divider
+
+\cvevent{Data Engineer/Data Scientist}{Groups: Excavation Division {\faDAndD} Integrated Components and Solutions}{January 2019-February 2021}{Mossville, IL}
+\begin{itemize}
+\item  Co-authored Python library for interfacing with controls software of Caterpillar Excavators for automated data gathering and ML activities
+\item  Designed an automated data ingestion and grooming pipeline managed by docker-compose to index and organize data which included deep learning object detection modeling for tagging datasets with desired information
+\item  Designed an Exploratory Data Analysis (EDA) web application with streamlit to explore the data ingested with above-mentioned data pipeline
+\item  Designed database schema and data hierarchy/storage standards for commonizing on data-related practices in the perception space at Caterpillar
+\item  Built a data storage prototype utilizing MySQL and Flask to centralize telematics and kinematics data storage and data access across many projects
+\item  Utilized Docker for portability of machine learning pipelines as well as data preprocessing pipelines
+\end{itemize}
+
+\divider
+
+\cvevent{Data Scientist 2}{Group: Information Analytics}{July 2017-January 2019}{Peoria, IL}
+\begin{itemize}
+\item  Graduated from the Analytics Professional Development Program (2019)
+\item  Worked on Scrum team following Agile development
+\item  Gained experience in building machine learning models using various frameworks in Python for random forest regressions models, reinforcement learning models, and various deep learning models for computer vision applications
+\item  Became certified on the C3.IoT (now: C3.ai) platform for a data platform initiative at Cat 
+\end{itemize}
+
+% \cvevent{Head of Staff}{Summit Ministries}{Summers of 2015-2017}{Manitou Springs, CO}
+% \begin{itemize}
+% \item Oversaw staff of 35-45 camp counselors and ~180 students for 2-week conferences during the summers
+% \item Coached counselors in discussion facilitation, job duties, and techniques for handling sensitive issues such as student misconduct
+% \item Led efforts to find solutions for situations with disgruntled students and/or parents
+% \item Gained valuable leadership skills in the areas of personal connection, adaptation, critical thinking, and situation analysis
+
+% \end{itemize}
+
+
+\cvsection{Certificates}
+
+\begin{itemize}
+\item Fundamentals of Deep Learning for Computer Vision | \textit{Nvidia}
+\item Convolutional Neural Networks | \textit{Coursera}
+\item Structuring Machine Learning Projects | \textit{Coursera}
+\item Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization | \textit{Coursera}
+\item Neural Networks and Deep Learning | \textit{Coursera}
+\item Python Programmer | \textit{Data Camp}
+\item Data Scientist with Python | \textit{Data Camp}
+\end{itemize}
+
+
+\cvsection{Conferences}
+
+\begin{itemize}
+\item vim.conf 2021
+\item Nvidia GPU Technology Conference 2019 \& 2020
+\item Hackillinois 2018
+
+\end{itemize}
+
+\cvsection{Publications}
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+
+\begin{itemize}
+\item {\faFile*[regular]} \textbf{Properties Preserving Schemes for a Kinetic Eikonal Equation} | \textit{J. Comput. Phys. 331(2016)}
+\item {\faFile*[regular]} \textbf{An asymptotic method based on a Hopf-Cole transformation for a kinetic BGK equation in the hyperbolic limit} | \textit{J. Comput. Phys. 341: 295-312 (2017)}
+\item {\faFile*[regular]} \textbf{A Hopf-Cole transformation based asymptotic method for kinetic equations with a BGK collision operator in the large scale hyperbolic limit} | \textit{Iowa State University Graduate Theses and Dissertations. 15788.}
+
+\end{itemize}
+
+\cvsection{Patents}
+
+\begin{itemize}
+\item \textbf{filed} | Excavator Control Mapping System
+\item \textbf{filed} | Vision Based Object Detection Alarm Snooze Strategy for Rotating Machines
+
+\end{itemize}
+
+
+\cvsection{Hobbies}
+
+\cvachievement{\faGlassMartini}{Whisky tasting and cigar pairing}{Enjoying a nice dram}
+%\divider
+\cvachievement{\faServer}{Home-labbing}{Self host all the things!}
+
+\cvachievement{\faSpinner}{Theology}{Ancient Near Eastern Cosmology as the roots for Biblical exegesis}
+%\divider
+\cvachievement{\faVolleyballBall}{Volleyball}{Because ball is life}
+%\divider
+% \cvachievement{\faRocket}{Travelling}{From the beaches of Barbados to the green hills of Ireland}
+%\divider
+\cvachievement{\faJoget}{Disc Golf}{Olympics 2024. You heard it here first}
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Looking for}
+
+\begin{quote}
+\justify
+% A team of other disciplined students and tenacious learners who look for ways to improve their lives through automation and love working with data to make data-driven decisions.
+A team of other disciplined students and tenacious learners who continuously look for ways to improve their live by striving for excellence in their respective passions.
+\end{quote}
+
+\cvsection{Technical Skills}
+
+\cvevent{{\faPython} Python }{}{}{}
+\begin{itemize}
+\item \textit{{\faStream} Pipeline} | Kedro 
+\item \textit{{\faAtom} Data Science/Engineering} | Pandas, Numpy, Scipy, Sqlalchemy
+% \item \textit{{\faMicrochip} Computer Science} | Multiprocessing, Python-rq
+\item \textit{{\faProjectDiagram} Machine Learning / Deep Learning Frameworks} | Keras / Tensorflow, PyTorch with APex and AMP, SciKit-Learn
+\item \textit{{\faBrain} Machine Learning / Deep Learning Algorithms} | Standard sk-learn techniques, object detection + classification 
+\item \textit{{\faEye} Exploration} | Streamlit, Jupyter Notebooks
+\item \textit{{\faChartPie} Viz} | Plotly, Matplotlib, Seaborn, Hvplot
+\item \textit{{\faCodeBranch} Versioning} | MLflow, \faGit
+
+\end{itemize}
+
+
+\cvevent{{\faDatabase} SQL }{}{}{}
+\begin{itemize}
+\item Schema design and data modeling
+\item \textit{Databases} | MySQL, Oracle, MS SQL Server, Snowflake
+\end{itemize}
+
+\cvevent{{\faDocker} Containerization }{}{}{}
+
+\begin{itemize}
+\item Docker(-Compose)
+\end{itemize}
+
+\cvevent{{\faChartArea} Visualization }{}{}{}
+\begin{itemize}
+\item Some experience with dashboard frameworks in Python such as \textit{Dash} or \textit{Visdom}
+\item Basic Tableau experience
+\item Experience building EDA tools with \textit{streamlit}
+\end{itemize}
+
+\cvevent{ {\faServer} Miscellaneous}{}{}{}
+\begin{itemize}
+\item {\faLinux} Linux 
+\item Remote deployment/development
+\item Vim is the superior editor
+\item \LaTeX
+\item  {\faGit}
+\end{itemize}
+
+\divider
+
+%% Add a cheeky quote
+\vspace*{\fill}
+\hspace*{\fill}
+q: Which came first, the phoenix or the egg?
+
+\newpage
+
+\cvsection{Strengths}
+\cvtag{Active Learning} 
+\cvtag{Leadership}
+\cvtag{Coaching}
+\cvtag{Flexibility and Adaptability}
+\cvtag{Conflict Resolution}
+\cvtag{Analytical Thinking}
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\medskip
+
+\cvsection{Education}
+\cvevent{MS Applied Mathematics} {Iowa State University}{2014 - 2016}{Ames, IA} 
+\textsc{CGPA}: 3.84/4.0
+\\
+\cvevent{BS Mathematics}{Iowa State University}{2011-2014}{Ames, IA}
+\textsc{CGPA}: 3.64/4.0
+
+% \divider
+
+\cvsection{References}
+
+
+Available on request
+
+
+
+
+\end{paracol}
+
+
+%% Add a cheeky quote
+\vspace*{\fill}
+\hspace*{\fill}
+% All models are wrong, some models are useful
+a: A circle has no beginning
+
+\clearpage
+
+\end{document}
+\end{document}
