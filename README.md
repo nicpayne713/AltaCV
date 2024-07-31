@@ -1,3 +1,4 @@
+# I have moved my resume to [another repo](https://www.github.com/pypeaday/resume)
 # AltaCV, yet another LaTeX CV/Résumé class
 
 v1.6.4 (13 Nov 2021), by LianTze Lim (liantze@gmail.com)
